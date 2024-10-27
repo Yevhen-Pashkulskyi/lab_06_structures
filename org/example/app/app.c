@@ -1,7 +1,7 @@
-#include <stdio.h>
+#include "service/func.h"
 
-int main(void)
-{
-    printf("Hello, World!\n");
+
+int main(void) {
+    run();
     return 0;
 }
