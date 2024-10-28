@@ -39,7 +39,7 @@ void print_student(struct Student *student, int size, int position) {
         if (i == position) {
             printf("Student %d: %s %s %s course:%d year:%d\n"
                    "Semester 1: math=%d physic=%d programing=%d\n"
-                   "Semester 2: math=%d physic=%d drawing=%d\n absolute rate = %.2f \% \n\n", i + 1, student[i].surname,
+                   "Semester 2: math=%d physic=%d drawing=%d\n absolute rate = %.2f %% \n\n", i + 1, student[i].surname,
                    student[i].name,
                    student[i].patronymic, student[i].course, student[i].year, student[i].semester1.math,
                    student[i].semester1.physic,
