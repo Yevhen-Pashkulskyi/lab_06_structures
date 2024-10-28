@@ -3,17 +3,38 @@
 #include <stdlib.h>
 #include <time.h>
 
+int choice_menu() {
+    int choice;
+    scanf("%d", &choice);
+    return choice;
+}
 
 int run() {
-    srand(time(NULL));
-    int size = random_num(1, 5);
-    printf("size students: %d ", size);
-    // scanf("\n%d", &size);
-    getchar();
-    struct Student *students = add(size);
-    if (students != NULL) {
-        print(students, size);
-        free(students);
+    int size_student = 19;
+    struct Student *students = add(size_student);
+    show_menu();
+    switch (choice_menu()) {
+        case 1:
+            if (students != NULL) {
+                print_all(students, size_student);
+                free(students);
+            }
+            run();
+            break;
+        case 2:
+            show_all();
+            if (students != NULL) {
+                print_student(students, size_student, choice_menu() - 1);
+                free(students);
+            }
+            run();
+            break;
+        case 0:
+            break;
+        default:
+            printf("Invalid choice\n");
+            run();
+            break;
     }
     return 0;
 }

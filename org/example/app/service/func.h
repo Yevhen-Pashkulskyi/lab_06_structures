@@ -9,5 +9,15 @@ int random_num(int min, int max);
 
 float absolut_positive(struct Student *students, int size);
 
-void print(struct Student *students, int size);
+void list_student(struct Student *student, int student_number);
+
+void show_menu();
+
+void show_student();
+
+void show_all();
+
+void print_all(struct Student *students, int size);
+
+void print_student(struct Student *student, int size, int position);
 #endif
