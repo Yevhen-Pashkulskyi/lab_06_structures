@@ -43,9 +43,9 @@ struct Student *add(int size) {
 
 void print(struct Student *students, int size) {
     for (int i = 0; i < size; i++) {
-        printf("Student %d: %s %s %s course:%d year:%d\n"
+        printf("\nStudent %d: %s %s %s course:%d year:%d\n"
                "Semester 1: math:%d physic:%d programing:%d\n"
-               "Semester 2: math:%d physic:%d drawing:%d\n %.2f\n", i + 1, students[i].surname, students[i].name,
+               "Semester 2: math:%d physic:%d drawing:%d\n absolute rate = %.2f %%\n\n", i + 1, students[i].surname, students[i].name,
                students[i].patronymic, students[i].course, students[i].year, students[i].semester1.math,
                students[i].semester1.physic,
                students[i].semester1.programming,
