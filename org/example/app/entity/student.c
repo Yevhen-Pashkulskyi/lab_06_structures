@@ -3,7 +3,8 @@
 #include <stdio.h>
 #include "../entity/students.h"
 #include "../service/func.h"
-
+const int POSITIVE_NUMBERS = 30;
+const int SUBJECT = 6;
 
 struct Student *add(int size) {
     struct Student *student_ptr = (struct Student *) malloc(size * sizeof(struct Student));
@@ -27,13 +28,10 @@ struct Student *add(int size) {
         strtok(student_ptr[i].patronymic, "\n");
 
         student_ptr[i].course = random_num(1, 4);
-
         student_ptr[i].year = random_num(18, 50);
 
         student_ptr[i].semester1.math = random_num(0, 100);
-
         student_ptr[i].semester1.physic = random_num(0, 100);
-
         student_ptr[i].semester1.programming = random_num(0, 100);
 
         student_ptr[i].semester2.math = random_num(0, 100);
@@ -45,10 +43,38 @@ struct Student *add(int size) {
 
 void print(struct Student *students, int size) {
     for (int i = 0; i < size; i++) {
-        printf("Student %d: %s %s %s %d %d\n%d %d %d\n%d %d %d\n", i + 1, students[i].surname, students[i].name,
+        printf("Student %d: %s %s %s course:%d year:%d\n"
+               "Semester 1: math:%d physic:%d programing:%d\n"
+               "Semester 2: math:%d physic:%d drawing:%d\n %.2f\n", i + 1, students[i].surname, students[i].name,
                students[i].patronymic, students[i].course, students[i].year, students[i].semester1.math,
                students[i].semester1.physic,
                students[i].semester1.programming,
-               students[i].semester2.math, students[i].semester2.physic, students[i].semester2.drawing);
+               students[i].semester2.math, students[i].semester2.physic, students[i].semester2.drawing,
+               absolut_positive(students, i));
     }
+}
+
+float absolut_positive(struct Student *students, int index) {
+    int count = 0;
+
+    if (students[index].semester1.math >= POSITIVE_NUMBERS) {
+        count++;
+    }
+    if (students[index].semester1.physic >= POSITIVE_NUMBERS) {
+        count++;
+    }
+    if (students[index].semester1.programming >= POSITIVE_NUMBERS) {
+        count++;
+    }
+    if (students[index].semester2.physic >= POSITIVE_NUMBERS) {
+        count++;
+    }
+    if (students[index].semester2.math >= POSITIVE_NUMBERS) {
+        count++;
+    }
+    if (students[index].semester2.drawing >= POSITIVE_NUMBERS) {
+        count++;
+    }
+
+    return count / (float) SUBJECT * 100;
 }
