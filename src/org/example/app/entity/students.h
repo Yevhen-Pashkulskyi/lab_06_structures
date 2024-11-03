@@ -1,3 +1,5 @@
+#ifndef STUDENTS_H
+#define STUDENTS_H
 
 struct Semester1 {
     int math, physic, programming;
@@ -13,3 +15,4 @@ struct Student {
     struct Semester1 semester1;
     struct Semester2 semester2;
 };
+#endif // STUDENTS_H
