@@ -1,8 +1,7 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include "../entity/students.h"
 #include "../service/func.h"
-
+// початкове меню
 void show_menu() {
     printf(
         "1. Show all students.\n"
@@ -11,6 +10,7 @@ void show_menu() {
         "Make a choice:");
 }
 
+// список студентів для того щоб обрати можливо було когось конкретного
 void show_all() {
     printf("1.Vinichenko Sergiy Vasilyovich\n"
         "2.Didenko Leonid Volodimirovich\n"
@@ -34,6 +34,7 @@ void show_all() {
         "Make a choice:");
 }
 
+//друк студента з його данними
 void print_student(struct Student *student, int size, int position) {
     for (int i = 0; i < size; i++) {
         if (i == position) {
@@ -50,7 +51,8 @@ void print_student(struct Student *student, int size, int position) {
     }
 }
 
-void print_all(struct Student *students, int size) {
+//друк всіх студентів з їхніми даними
+void print_all_students(struct Student *students, int size) {
     for (int i = 0; i < size; i++) {
         printf("Student %d: %s %s %s course:%d year:%d\n"
                "Semester 1: math=%d physic=%d programing=%d\n"

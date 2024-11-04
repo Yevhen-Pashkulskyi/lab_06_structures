@@ -1,7 +1,7 @@
 #include <string.h>
 
 #include "../entity/students.h"
-
+//список студентів за викликом
 void list_student(struct Student *student, int student_number) {
     switch (student_number) {
         case 1:

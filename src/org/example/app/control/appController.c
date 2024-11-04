@@ -1,25 +1,25 @@
 #include "../service/func.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
-
+//функція вибору меню
 int choice_menu() {
     int choice;
     scanf("%d", &choice);
     return choice;
 }
 
+// функція виконання програми вона поєднує всі функції
 int run() {
     int size_student = 19;
-    struct Student *students = add(size_student);
+    struct Student *students = created_student(size_student); //показчик на створенного студента
     show_menu();
     switch (choice_menu()) {
         case 1:
             if (students != NULL) {
-                print_all(students, size_student);
+                print_all_students(students, size_student);
                 free(students);
             }
-            run();
+            run(); //рекурсія
             break;
         case 2:
             show_all();
