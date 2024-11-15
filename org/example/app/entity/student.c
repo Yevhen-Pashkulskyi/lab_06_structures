@@ -6,7 +6,7 @@
 const int POSITIVE_NUMBERS = 30;
 const int SUBJECT = 6;
 
-struct Student *add(int size) {
+struct Student *created_Student(int size) {
     struct Student *student_ptr = (struct Student *) malloc(size * sizeof(struct Student));
     if (student_ptr == NULL) {
         printf("Out of memory\n");
@@ -30,13 +30,13 @@ struct Student *add(int size) {
         student_ptr[i].course = random_num(1, 4);
         student_ptr[i].year = random_num(18, 50);
 
-        student_ptr[i].semester1.math = random_num(0, 100);
-        student_ptr[i].semester1.physic = random_num(0, 100);
-        student_ptr[i].semester1.programming = random_num(0, 100);
+        student_ptr[i].semester1.math = random_num(0, 50);
+        student_ptr[i].semester1.physic = random_num(0, 50);
+        student_ptr[i].semester1.programming = random_num(0, 50);
 
-        student_ptr[i].semester2.math = random_num(0, 100);
-        student_ptr[i].semester2.physic = random_num(0, 100);
-        student_ptr[i].semester2.drawing = random_num(0, 100);
+        student_ptr[i].semester2.math = random_num(0, 50);
+        student_ptr[i].semester2.physic = random_num(0, 50);
+        student_ptr[i].semester2.drawing = random_num(0, 50);
     }
     return student_ptr;
 }

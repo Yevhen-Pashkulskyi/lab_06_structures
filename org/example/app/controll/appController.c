@@ -10,7 +10,7 @@ int run() {
     printf("\nsize students: %d \n", size);
     // scanf("\n%d", &size);
     // getchar();
-    struct Student *students = add(size);
+    struct Student *students = created_Student(size);
     if (students != NULL) {
         print(students, size);
         free(students);

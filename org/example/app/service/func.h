@@ -3,7 +3,7 @@
 
 int run();
 
-struct Student *add(int size);
+struct Student *created_Student(int size);
 
 int random_num(int min, int max);
 
