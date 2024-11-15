@@ -1,4 +1,4 @@
-
+#pragma once
 struct Semester1 {
     int math, physic, programming;
 };
