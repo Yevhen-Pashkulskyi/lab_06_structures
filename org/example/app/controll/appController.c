@@ -25,7 +25,6 @@ int run() {
                 free(students);
             }
             run();
-            break;
         case 0:
             break;
         default: printf("Invalid choice\n");
